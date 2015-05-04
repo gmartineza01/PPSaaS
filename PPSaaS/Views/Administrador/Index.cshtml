@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "Administrador";
+    Layout = "~/Views/Shared/_General.cshtml";
+}
+
+
+<style type="text/css">
+
+</style>
+
+
+<div class="container">
+<div class="col-md-9">
+
+   <div class="container-info">@*panel panel*@                    
+    
+       <!-- Sección notas importantes o de ultima hora-->
+    <div class="alert alert-success alert-dismissable fade in">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <span><b>Aviso importante:</b> Este es un aviso para el administrador
+               </span>
+    </div>
+    <hr />   
+       
+       
+    <div class="page-header">
+        <h3 id="timeline">Bienvenido: Administrador</h3>@ViewBag.nombreCompleto
+        <p>Estos son tus servicios disponibles</p>
+    </div>
+    
+<div class="row">
+
+
+
+<div class="col-lg-6 col-md-6 col-sm-6">
+    <div class="style-box-one Style-one-clr-one">
+        <a href="~/Administrador/Escuela">
+            <span class="glyphicon glyphicon-education"></span>
+            <h5>Administración de escuelas </h5>
+        </a>
+    </div>
+</div>
+
+
+
+<div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="style-box-one Style-one-clr-two">
+            <a href="#">
+            <span class="glyphicon glyphicon-blackboard"></span>
+            <h5>Reportes estadisticos</h5>
+        </a>
+    </div>
+</div>
+
+
+    <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="style-box-one Style-one-clr-four">
+                <a href="#">
+                    <span class="glyphicon glyphicon-usd"></span>
+                    <h5>Pagos y facturación</h5>
+                 </a>
+             </div>
+</div>
+
+
+</div>
+
+
+
+
+
+</div>
+               
+</div>
+
+
+<div class="col-md-3">
+      <div class="container-info-gray" style="position:fixed; padding:25px;">
+         
+       <h4 > <span class="glyphicon glyphicon-folder-open"></span> &nbsp;&nbsp;Recursos disponibles</h4>
+
+
+<div class="widget-wrapper">
+
+
+                    <ul>
+                         <li>
+                             @*    <span>Elemento 1</span>*@
+
+                              <span class="glyphicon glyphicon-user"></span>  Juan Reyes Martinez
+                            </li>
+                            <li>
+                                <span class="glyphicon glyphicon-user"></span>  Roberto Reyes Martinez
+                              @* <span class="glyphicon glyphicon-camera"></span>   Quisque sed tincidunt  <span class="badge clr-bk-success">35</span>*@
+                            </li>
+                            <li>
+                               <span class="glyphicon glyphicon-user"></span>  Alan Reyes Martinez
+                             @*<span class="glyphicon glyphicon-headphones"></span>   Nunc euismod neque a urna<span class="badge clr-bk-warning">890</span>*@
+                            </li>
+                        
+                        
+                        </ul>
+                    </div>
+
+      </div>
+</div>
+
+
+    </div>

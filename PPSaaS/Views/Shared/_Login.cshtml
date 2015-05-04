@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+     <meta name="viewport" content="width=device-width" />
+    <title>@(ViewBag.Title != null ? String.Format("{0} | ", ViewBag.Title) : "")SaaS</title>
+     @*<link href="@Url.Content("~/favicon.ico")" rel="shortcut icon" />*@ 
+
+     <link href="@Url.Content("~/Content/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+     <link href="@Url.Content("~/Content/main.css")" rel="stylesheet" type="text/css" /> 
+    @* <link href="@Url.Content("~/Content/Dashboard.css")" rel="stylesheet" type="text/css" />*@
+
+     <script src="@Url.Content("~/Scripts/jquery-1.9.1.js")"></script>
+     <script src="@Url.Content("~/Scripts/bootstrap.min.js")" type="text/javascript"></script>
+
+
+     @RenderSection("Styles", false)
+     @RenderSection("Scripts", false)
+
+    <style type="text/css">
+        footer {
+        margin-top:15%;
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+       <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        &#169;2015 Soluciones Piedra Santa |  <a class="esqsupder" href="@Url.Action("ContactoCorreo", "Portal")" target="contacto">Contacto</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>

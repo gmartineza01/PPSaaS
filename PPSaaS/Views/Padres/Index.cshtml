@@ -1,0 +1,237 @@
+﻿@{
+    ViewBag.Title = "Padre de familia";
+    Layout = "~/Views/Shared/_General.cshtml";
+}
+
+<style type="text/css">
+
+</style>
+
+
+<div class="container">
+<div class="col-md-9">
+
+   <div class="container-info">@*panel panel*@                    
+    
+       <!-- Sección notas importantes o de ultima hora-->
+    <div class="alert alert-success alert-dismissable fade in">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <span><b>Aviso importante:</b> Le recordamos que el periodo de inscripción para el ciclo academico 2015-2016 podrá realizarlo en el mes de julio.Para más información haz click 
+                <a href="#" data-toggle="modal" data-target="#modal-video-tutorial" data-backdrop="static" data-keyboard="false" >aquí</a></span>
+    </div>
+    <hr />   
+       
+       
+    <div class="page-header">
+        <h3 id="timeline">Bienvenido: Barack Obama</h3>@ViewBag.nombreCompleto
+        <p>Estos son los servicios disponibles en tu escuela</p>
+    </div>
+    
+<div class="row">
+
+
+
+<div class="col-lg-6 col-md-6 col-sm-6">
+    <div class="style-box-one Style-one-clr-one">
+        <a href="#">
+            <span class="glyphicon glyphicon-calendar"></span>
+            <h5>Calendario academico </h5>
+        </a>
+    </div>
+</div>
+
+
+
+<div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="style-box-one Style-one-clr-two">
+            <a href="~/Views/Inscripcion/Index">
+            <span class="glyphicon glyphicon-pencil"></span>
+            <h5>Inscripciones</h5>
+        </a>
+    </div>
+</div>
+
+
+<div class="col-lg-6 col-md-6 col-sm-6">
+        <div class="style-box-one Style-one-clr-three">
+        <a href="#">
+           <span class="glyphicon glyphicon-cutlery"></span>
+           <h5>Cafeteria</h5>
+         </a>
+        </div>
+</div>
+
+
+<div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="style-box-one Style-one-clr-four">
+                <a href="#">
+                    <span class="glyphicon glyphicon-usd"></span>
+                    <h5>Estado de cuenta y pago en linea</h5>
+                 </a>
+             </div>
+</div>
+
+<div class="col-lg-6 col-md-6 col-sm-6">
+    <div class="style-box-one Style-one-clr-five">
+        <a href="#">
+            <span class="glyphicon glyphicon-book"></span>
+            <h5>Salon de clases</h5>
+        </a>
+    </div>
+</div>
+    
+
+@*<div class="col-lg-6 col-md-6 col-sm-6">
+    <div class="style-box-one Style-one-clr-one">    
+    <a href="http://htmladmin.com/live-previews/version-1-0/html-admin/index2.html" target="_blank">
+            <span class="glyphicon glyphicon-book"></span>
+            <h5>mas ejemplos</h5>
+        </a>
+    </div>
+</div>*@
+
+
+
+<div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="style-box-one Style-one-clr-two">
+            <a href="#">
+            <span class="glyphicon glyphicon-education"></span>
+            <h5>Calificaciones</h5>
+        </a>
+    </div>
+</div>
+
+
+<div class="row">
+
+       <div class="page-header">
+        <h3 >Ultimas noticias</h3>
+
+       </div>
+    <div class="twt-wrapper" >
+        
+                            <div class="panel panel-default">
+                              @*  <div class="panel-heading">
+                                   <h3>Ultimas noticias</h3> 
+                                </div>*@
+                                <div class="panel-body">
+
+                                    <ul class="media-list">
+                                        <li class="media">
+                                          <a href="#" class="pull-left">
+                                                <img src="http://b7.us.icdn.ru/g/go_kate/3/42695903sED.jpg" alt="" class="img-circle" style="width:65px; height:65px; margin-bottom:15px;">
+                                            </a>
+                                            <div class="media-body">
+                                                <span class="text-muted pull-right">
+                                                    <small class="text-muted">01/05/2015</small>
+                                                </span>
+                                                <strong class="text-success"> Actividades extracurriculares</strong>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                            Lorem ipsum dolor sit amet, <a href="#">[leer más]</a>.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="media">
+                                        <a href="#" class="pull-left">
+                                                <img src="http://b7.us.icdn.ru/g/go_kate/3/42695903sED.jpg" alt="" class="img-circle" style="width:65px; height:65px; margin-bottom:15px;">
+                                            </a>
+                                            <div class="media-body">
+                                                <span class="text-muted pull-right">
+                                                    <small class="text-muted">30/04/2015</small>
+                                                </span>
+                                                <strong class="text-success">Actividades del dia del niño</strong>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    Lorem ipsum dolor <a href="#">[leer más]</a>
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="media">
+                                             <a href="#" class="pull-left">
+                                                <img src="http://b7.us.icdn.ru/g/go_kate/3/42695903sED.jpg" alt="" class="img-circle" style="width:65px; height:65px; margin-bottom:15px;">
+                                            </a>
+                                            <div class="media-body">
+                                                <span class="text-muted pull-right">
+                                                    <small class="text-muted">28/04/2015</small>
+                                                </span>
+                                                <strong class="text-success">Informacion importante mayo</strong>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                            Lorem ipsum dolor sit amet, <a href="#">[leer más]</a>.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="media">
+                                             <a href="#" class="pull-left">
+                                                <img src="http://b7.us.icdn.ru/g/go_kate/3/42695903sED.jpg" alt="" class="img-circle" style="width:65px; height:65px; margin-bottom:15px;">
+                                            </a>
+                                            <div class="media-body">
+                                                <span class="text-muted pull-right">
+                                                    <small class="text-muted">20/04/2015</small>
+                                                </span>
+                                                <strong class="text-success"> En febrero son las inscripciones</strong>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                                    Lorem ipsum dolor <a href="#">[leer más]</a>
+                                                </p>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                     <a href="#" class="btn btn-success " style="float:right;"><span class="glyphicon glyphicon-refresh"></span>&nbsp; Cargar más noticias</a>
+                                </div>
+
+                              
+                            </div>
+                        </div>
+        </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+               
+</div>
+
+
+<div class="col-md-3">
+      <div class="container-info-gray" style="position:fixed; padding:25px;">
+         
+       <h4 > <span class="glyphicon glyphicon-folder-open"></span> &nbsp;&nbsp;Tutorias disponibles</h4>
+
+
+<div class="widget-wrapper">
+
+
+                    <ul>
+                         <li>
+                             @*    <span>Elemento 1</span>*@
+
+                              <span class="glyphicon glyphicon-user"></span>  Juan Reyes Martinez
+                            </li>
+                            <li>
+                                <span class="glyphicon glyphicon-user"></span>  Roberto Reyes Martinez
+                              @* <span class="glyphicon glyphicon-camera"></span>   Quisque sed tincidunt  <span class="badge clr-bk-success">35</span>*@
+                            </li>
+                            <li>
+                               <span class="glyphicon glyphicon-user"></span>  Alan Reyes Martinez
+                             @*<span class="glyphicon glyphicon-headphones"></span>   Nunc euismod neque a urna<span class="badge clr-bk-warning">890</span>*@
+                            </li>
+                        
+                        
+                        </ul>
+                    </div>
+
+      </div>
+</div>
+
+
+    </div>

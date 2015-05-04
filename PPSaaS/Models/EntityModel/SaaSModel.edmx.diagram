@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d542ce0afef447f19a68794f1199c512" Name="Diagrama1" ZoomLevel="20">
+        <EntityTypeShape EntityType="SaaSModel.alumno" Width="1.5" PointX="6.4270860657222038" PointY="4.8977142744221327" />
+        <EntityTypeShape EntityType="SaaSModel.avisoPrivacidad" Width="1.5" PointX="3.8014819527983112" PointY="4.032256232589603" />
+        <EntityTypeShape EntityType="SaaSModel.cicloAcademico" Width="1.5" PointX="2.5380562630193571" PointY="7.763437870779744" />
+        <EntityTypeShape EntityType="SaaSModel.contrato" Width="1.5" PointX="0.236356420552524" PointY="18.44225371742726" />
+        <EntityTypeShape EntityType="SaaSModel.escuela" Width="1.5" PointX="5.449636528943496" PointY="4.8390570305469716" />
+        <EntityTypeShape EntityType="SaaSModel.estatusPublicacion" Width="1.5" PointX="10.743735540073242" PointY="16.096738167152154" />
+        <EntityTypeShape EntityType="SaaSModel.etapaInscripcion" Width="1.5" PointX="10.962235629075316" PointY="11.760023867599678" />
+        <EntityTypeShape EntityType="SaaSModel.evento" Width="1.5" PointX="6.2428112487508045" PointY="12.35662763396121" />
+        <EntityTypeShape EntityType="SaaSModel.inscripcion" Width="1.5" PointX="5.428437460879068" PointY="9.531620641020881" />
+        <EntityTypeShape EntityType="SaaSModel.medicamento" Width="1.5" PointX="3.3061184600489764" PointY="29.883644266931174" />
+        <EntityTypeShape EntityType="SaaSModel.mensaje" Width="1.5" PointX="4.8542583067222775" PointY="21.312412286788419" />
+        <EntityTypeShape EntityType="SaaSModel.notificacion" Width="1.5" PointX="9.9238143795746456" PointY="3.407651187576191" />
+        <EntityTypeShape EntityType="SaaSModel.publicacion" Width="1.5" PointX="9.90452033928806" PointY="11.953717341625" />
+        <EntityTypeShape EntityType="SaaSModel.relAlumnoMedicamento" Width="1.5" PointX="2.0183186875741548" PointY="31.872102171123075" />
+        <EntityTypeShape EntityType="SaaSModel.relEscuelaServicio" Width="1.5" PointX="5.5302202690067794" PointY="0.093070000453419052" />
+        <EntityTypeShape EntityType="SaaSModel.relEscuelaTema" Width="1.5" PointX="3.0694558318096474" PointY="4.3269086053254586" />
+        <EntityTypeShape EntityType="SaaSModel.relInscripcionEtapa" Width="1.5" PointX="0.97524343662673763" PointY="29.547494499733435" />
+        <EntityTypeShape EntityType="SaaSModel.relUsuarioRol" Width="1.5" PointX="4.9900947590312432" PointY="26.209603306934984" />
+        <EntityTypeShape EntityType="SaaSModel.rol" Width="1.5" PointX="4.6076005551068118" PointY="4.6321514866464542" />
+        <EntityTypeShape EntityType="SaaSModel.servicio" Width="1.5" PointX="5.510855552512619" PointY="14.278643272015566" />
+        <EntityTypeShape EntityType="SaaSModel.tema" Width="1.5" PointX="6.4282205730808064" PointY="19.473645845183007" />
+        <EntityTypeShape EntityType="SaaSModel.tutoria" Width="1.5" PointX="10.080624868199521" PointY="14.384638494991064" />
+        <EntityTypeShape EntityType="SaaSModel.usuario" Width="1.5" PointX="8.3794125376173358" PointY="10.142202605559586" />
+        <AssociationConnector Association="SaaSModel.fk_escuela_alumno" />
+        <AssociationConnector Association="SaaSModel.fk_inscripcion_idAlumno" />
+        <AssociationConnector Association="SaaSModel.fk_relAlumnoMedicamento_idAlumno" />
+        <AssociationConnector Association="SaaSModel.fk_inscripcion_idPeriodo" />
+        <AssociationConnector Association="SaaSModel.fk_idEscuela" />
+        <AssociationConnector Association="SaaSModel.fk_idEscuela_publicacion" />
+        <AssociationConnector Association="SaaSModel.fk_relUsuarioEscuela_idEscuela" />
+        <AssociationConnector Association="SaaSModel.fk_relUsuarioRol_idEscuela" />
+        <AssociationConnector Association="SaaSModel.fk_idEstatus_Publicacion" />
+        <AssociationConnector Association="SaaSModel.fk_inscripcionEtapa_idEtapa" />
+        <AssociationConnector Association="SaaSModel.fk_relNotificacionEvento_idEvento" />
+        <AssociationConnector Association="SaaSModel.fk_relInscripcionEtapa_idInscripcion" />
+        <AssociationConnector Association="SaaSModel.fk_relAlumnoMedicamento_idMedicamento" />
+        <AssociationConnector Association="SaaSModel.fk_relMensajeUsuario_idUsuarioEmite" />
+        <AssociationConnector Association="SaaSModel.fk_relMensajeUsuario_idUsuarioRecibe" />
+        <AssociationConnector Association="SaaSModel.fk_relNotificacionEvento_idUsuario" />
+        <AssociationConnector Association="SaaSModel.fk_idServicio" />
+        <AssociationConnector Association="SaaSModel.fk_relUsuarioRol_idRol" />
+        <AssociationConnector Association="SaaSModel.fk_relUsuarioRol_idUsuario" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

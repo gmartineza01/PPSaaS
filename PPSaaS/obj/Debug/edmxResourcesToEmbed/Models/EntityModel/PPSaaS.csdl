@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SaaSModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SaaSEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="alumno" EntityType="SaaSModel.alumno" />
+    <EntitySet Name="cicloAcademico" EntityType="SaaSModel.cicloAcademico" />
+    <EntitySet Name="escuela" EntityType="SaaSModel.escuela" />
+    <EntitySet Name="estatusPublicacion" EntityType="SaaSModel.estatusPublicacion" />
+    <EntitySet Name="etapaInscripcion" EntityType="SaaSModel.etapaInscripcion" />
+    <EntitySet Name="evento" EntityType="SaaSModel.evento" />
+    <EntitySet Name="inscripcion" EntityType="SaaSModel.inscripcion" />
+    <EntitySet Name="medicamento" EntityType="SaaSModel.medicamento" />
+    <EntitySet Name="mensaje" EntityType="SaaSModel.mensaje" />
+    <EntitySet Name="notificacion" EntityType="SaaSModel.notificacion" />
+    <EntitySet Name="publicacion" EntityType="SaaSModel.publicacion" />
+    <EntitySet Name="relAlumnoMedicamento" EntityType="SaaSModel.relAlumnoMedicamento" />
+    <EntitySet Name="relEscuelaServicio" EntityType="SaaSModel.relEscuelaServicio" />
+    <EntitySet Name="relEscuelaTema" EntityType="SaaSModel.relEscuelaTema" />
+    <EntitySet Name="relInscripcionEtapa" EntityType="SaaSModel.relInscripcionEtapa" />
+    <EntitySet Name="relUsuarioRol" EntityType="SaaSModel.relUsuarioRol" />
+    <EntitySet Name="rol" EntityType="SaaSModel.rol" />
+    <EntitySet Name="servicio" EntityType="SaaSModel.servicio" />
+    <EntitySet Name="tema" EntityType="SaaSModel.tema" />
+    <EntitySet Name="tutoria" EntityType="SaaSModel.tutoria" />
+    <EntitySet Name="usuario" EntityType="SaaSModel.usuario" />
+    <AssociationSet Name="fk_escuela_alumno" Association="SaaSModel.fk_escuela_alumno">
+      <End Role="escuela" EntitySet="escuela" />
+      <End Role="alumno" EntitySet="alumno" />
+    </AssociationSet>
+    <AssociationSet Name="fk_inscripcion_idAlumno" Association="SaaSModel.fk_inscripcion_idAlumno">
+      <End Role="alumno" EntitySet="alumno" />
+      <End Role="inscripcion" EntitySet="inscripcion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_relAlumnoMedicamento_idAlumno" Association="SaaSModel.fk_relAlumnoMedicamento_idAlumno">
+      <End Role="alumno" EntitySet="alumno" />
+      <End Role="relAlumnoMedicamento" EntitySet="relAlumnoMedicamento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_inscripcion_idPeriodo" Association="SaaSModel.fk_inscripcion_idPeriodo">
+      <End Role="cicloAcademico" EntitySet="cicloAcademico" />
+      <End Role="inscripcion" EntitySet="inscripcion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_idEscuela" Association="SaaSModel.fk_idEscuela">
+      <End Role="escuela" EntitySet="escuela" />
+      <End Role="relEscuelaServicio" EntitySet="relEscuelaServicio" />
+    </AssociationSet>
+    <AssociationSet Name="fk_idEscuela_publicacion" Association="SaaSModel.fk_idEscuela_publicacion">
+      <End Role="escuela" EntitySet="escuela" />
+      <End Role="publicacion" EntitySet="publicacion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_idEstatus_Publicacion" Association="SaaSModel.fk_idEstatus_Publicacion">
+      <End Role="estatusPublicacion" EntitySet="estatusPublicacion" />
+      <End Role="publicacion" EntitySet="publicacion" />
+    </AssociationSet>
+    <AssociationSet Name="fk_inscripcionEtapa_idEtapa" Association="SaaSModel.fk_inscripcionEtapa_idEtapa">
+      <End Role="etapaInscripcion" EntitySet="etapaInscripcion" />
+      <End Role="relInscripcionEtapa" EntitySet="relInscripcionEtapa" />
+    </AssociationSet>
+    <AssociationSet Name="fk_relInscripcionEtapa_idInscripcion" Association="SaaSModel.fk_relInscripcionEtapa_idInscripcion">
+      <End Role="inscripcion" EntitySet="inscripcion" />
+      <End Role="relInscripcionEtapa" EntitySet="relInscripcionEtapa" />
+    </AssociationSet>
+    <AssociationSet Name="fk_relAlumnoMedicamento_idMedicamento" Association="SaaSModel.fk_relAlumnoMedicamento_idMedicamento">
+      <End Role="medicamento" EntitySet="medicamento" />
+      <End Role="relAlumnoMedicamento" EntitySet="relAlumnoMedicamento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_idServicio" Association="SaaSModel.fk_idServicio">
+      <End Role="servicio" EntitySet="servicio" />
+      <End Role="relEscuelaServicio" EntitySet="relEscuelaServicio" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="alumno">
+    <Key>
+      <PropertyRef Name="idAlumno" />
+    </Key>
+    <Property Name="idAlumno" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="idEscuela" Type="Int32" />
+    <Property Name="nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="apellidoPaterno" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="apellidoMaterno" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="fechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="nacionalidad" Type="String" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="tipoSangre" Type="String" MaxLength="12" Unicode="false" FixedLength="false" />
+    <Property Name="bAutorizacionMedicamento" Type="Boolean" Nullable="false" />
+    <Property Name="bActivo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="escuela" Relationship="SaaSModel.fk_escuela_alumno" FromRole="alumno" ToRole="escuela" />
+    <NavigationProperty Name="inscripcion" Relationship="SaaSModel.fk_inscripcion_idAlumno" FromRole="alumno" ToRole="inscripcion" />
+    <NavigationProperty Name="relAlumnoMedicamento" Relationship="SaaSModel.fk_relAlumnoMedicamento_idAlumno" FromRole="alumno" ToRole="relAlumnoMedicamento" />
+  </EntityType>
+  <EntityType Name="cicloAcademico">
+    <Key>
+      <PropertyRef Name="idCicloAcademico" />
+    </Key>
+    <Property Name="idCicloAcademico" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="fechaInicio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fechaFin" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="inscripcion" Relationship="SaaSModel.fk_inscripcion_idPeriodo" FromRole="cicloAcademico" ToRole="inscripcion" />
+  </EntityType>
+  <EntityType Name="escuela">
+    <Key>
+      <PropertyRef Name="idEscuela" />
+    </Key>
+    <Property Name="idEscuela" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="RFC" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="claveSEP" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="direccion_calle" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="direccion_numero" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="direccion_estado" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="direccion_pais" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="direccion_cp" Type="String" MaxLength="6" Unicode="false" FixedLength="false" />
+    <Property Name="contacto_responsable" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="contacto_telefono" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="contacto_extension" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="bActivo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="alumno" Relationship="SaaSModel.fk_escuela_alumno" FromRole="escuela" ToRole="alumno" />
+    <NavigationProperty Name="relEscuelaServicio" Relationship="SaaSModel.fk_idEscuela" FromRole="escuela" ToRole="relEscuelaServicio" />
+    <NavigationProperty Name="publicacion" Relationship="SaaSModel.fk_idEscuela_publicacion" FromRole="escuela" ToRole="publicacion" />
+  </EntityType>
+  <EntityType Name="estatusPublicacion">
+    <Key>
+      <PropertyRef Name="idEstatus" />
+    </Key>
+    <Property Name="idEstatus" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="publicacion" Relationship="SaaSModel.fk_idEstatus_Publicacion" FromRole="estatusPublicacion" ToRole="publicacion" />
+  </EntityType>
+  <EntityType Name="etapaInscripcion">
+    <Key>
+      <PropertyRef Name="idEtapaInscripcion" />
+    </Key>
+    <Property Name="idEtapaInscripcion" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="secuencia" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="relInscripcionEtapa" Relationship="SaaSModel.fk_inscripcionEtapa_idEtapa" FromRole="etapaInscripcion" ToRole="relInscripcionEtapa" />
+  </EntityType>
+  <EntityType Name="evento">
+    <Key>
+      <PropertyRef Name="idEvento" />
+    </Key>
+    <Property Name="idEvento" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="descripcion" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="accion" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="vista" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="inscripcion">
+    <Key>
+      <PropertyRef Name="idInscripcion" />
+    </Key>
+    <Property Name="idInscripcion" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="idAlumno" Type="Int32" Nullable="false" />
+    <Property Name="idPeriodo" Type="Int32" Nullable="false" />
+    <Property Name="bInscrito" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="alumno" Relationship="SaaSModel.fk_inscripcion_idAlumno" FromRole="inscripcion" ToRole="alumno" />
+    <NavigationProperty Name="cicloAcademico" Relationship="SaaSModel.fk_inscripcion_idPeriodo" FromRole="inscripcion" ToRole="cicloAcademico" />
+    <NavigationProperty Name="relInscripcionEtapa" Relationship="SaaSModel.fk_relInscripcionEtapa_idInscripcion" FromRole="inscripcion" ToRole="relInscripcionEtapa" />
+  </EntityType>
+  <EntityType Name="medicamento">
+    <Key>
+      <PropertyRef Name="idMedicamento" />
+    </Key>
+    <Property Name="idMedicamento" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="fechaAlta" Type="DateTime" Precision="3" />
+    <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="relAlumnoMedicamento" Relationship="SaaSModel.fk_relAlumnoMedicamento_idMedicamento" FromRole="medicamento" ToRole="relAlumnoMedicamento" />
+  </EntityType>
+  <EntityType Name="mensaje">
+    <Key>
+      <PropertyRef Name="idMensaje" />
+    </Key>
+    <Property Name="idMensaje" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="idEmite" Type="Int32" Nullable="false" />
+    <Property Name="idRecibe" Type="Int32" Nullable="false" />
+    <Property Name="comentario" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="fechaEmision" Type="DateTime" Precision="3" />
+    <Property Name="fechaLectura" Type="DateTime" Precision="3" />
+    <Property Name="bLeido" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="notificacion">
+    <Key>
+      <PropertyRef Name="idNotificacion" />
+    </Key>
+    <Property Name="idNotificacion" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="idEvento" Type="Int32" Nullable="false" />
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <Property Name="bActivo" Type="Boolean" Nullable="false" />
+    <Property Name="fechaEvento" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="publicacion">
+    <Key>
+      <PropertyRef Name="idPublicacion" />
+    </Key>
+    <Property Name="idPublicacion" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="idEscuela" Type="Int32" Nullable="false" />
+    <Property Name="titulo" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="contenido" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="publico" Type="Boolean" Nullable="false" />
+    <Property Name="idEstatus" Type="Int32" Nullable="false" />
+    <Property Name="fechaPublicacion" Type="DateTime" Precision="3" />
+    <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+    <Property Name="fechaBaja" Type="DateTime" Precision="3" />
+    <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="bFecha" Type="Boolean" />
+    <NavigationProperty Name="escuela" Relationship="SaaSModel.fk_idEscuela_publicacion" FromRole="publicacion" ToRole="escuela" />
+    <NavigationProperty Name="estatusPublicacion" Relationship="SaaSModel.fk_idEstatus_Publicacion" FromRole="publicacion" ToRole="estatusPublicacion" />
+  </EntityType>
+  <EntityType Name="relAlumnoMedicamento">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="idAlumno" Type="Int32" Nullable="false" />
+    <Property Name="idMedicamento" Type="Int32" Nullable="false" />
+    <Property Name="bAutorizado" Type="Boolean" Nullable="false" />
+    <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="alumno" Relationship="SaaSModel.fk_relAlumnoMedicamento_idAlumno" FromRole="relAlumnoMedicamento" ToRole="alumno" />
+    <NavigationProperty Name="medicamento" Relationship="SaaSModel.fk_relAlumnoMedicamento_idMedicamento" FromRole="relAlumnoMedicamento" ToRole="medicamento" />
+  </EntityType>
+  <EntityType Name="relEscuelaServicio">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="idEscuela" Type="Int32" Nullable="false" />
+    <Property Name="idServicio" Type="Int32" Nullable="false" />
+    <Property Name="bActivo" Type="Boolean" Nullable="false" />
+    <Property Name="fechaModificacion" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <NavigationProperty Name="escuela" Relationship="SaaSModel.fk_idEscuela" FromRole="relEscuelaServicio" ToRole="escuela" />
+    <NavigationProperty Name="servicio" Relationship="SaaSModel.fk_idServicio" FromRole="relEscuelaServicio" ToRole="servicio" />
+  </EntityType>
+  <EntityType Name="relEscuelaTema">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="idEscuela" Type="Int32" Nullable="false" />
+    <Property Name="idTema" Type="Int32" Nullable="false" />
+    <Property Name="bActivo" Type="Boolean" Nullable="false" />
+    <Property Name="fechaActualizacion" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="relInscripcionEtapa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="idInscripcion" Type="Int32" Nullable="false" />
+    <Property Name="idEtapaInscripcion" Type="Int32" Nullable="false" />
+    <Property Name="bCompleto" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="etapaInscripcion" Relationship="SaaSModel.fk_inscripcionEtapa_idEtapa" FromRole="relInscripcionEtapa" ToRole="etapaInscripcion" />
+    <NavigationProperty Name="inscripcion" Relationship="SaaSModel.fk_relInscripcionEtapa_idInscripcion" FromRole="relInscripcionEtapa" ToRole="inscripcion" />
+  </EntityType>
+  <EntityType Name="relUsuarioRol">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <Property Name="idRol" Type="Int32" Nullable="false" />
+    <Property Name="idEscuela" Type="Int32" />
+    <Property Name="bActivo" Type="Boolean" Nullable="false" />
+    <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="rol">
+    <Key>
+      <PropertyRef Name="idRol" />
+    </Key>
+    <Property Name="idRol" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="fechaActualizacion" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="servicio">
+    <Key>
+      <PropertyRef Name="idServicio" />
+    </Key>
+    <Property Name="idServicio" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="controlador" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="vista" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="bActivo" Type="Boolean" />
+    <NavigationProperty Name="relEscuelaServicio" Relationship="SaaSModel.fk_idServicio" FromRole="servicio" ToRole="relEscuelaServicio" />
+  </EntityType>
+  <EntityType Name="tema">
+    <Key>
+      <PropertyRef Name="idTema" />
+    </Key>
+    <Property Name="idTema" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="descripcion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tutoria">
+    <Key>
+      <PropertyRef Name="idTutoria" />
+    </Key>
+    <Property Name="idTutoria" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="idUsuario" Type="Int32" Nullable="false" />
+    <Property Name="idAlumno" Type="Int32" Nullable="false" />
+    <Property Name="bAutorizado" Type="Boolean" Nullable="false" />
+    <Property Name="fechaAlta" Type="DateTime" Precision="3" />
+    <Property Name="fechaModificacion" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="idEscuela" Type="Int32" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="apellidoPaterno" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="apellidoMaterno" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="cuenta" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="nomina" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="contrasena" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="sal" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="bActivo" Type="Boolean" Nullable="false" />
+    <Property Name="direccion_calle" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="direccion_numero" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="direccion_ciudad" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="direccion_estado" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="direccion_pais" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="direccion_cp" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="contacto_telefono" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="contacto_extension" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="contacto_movil" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+    <Property Name="tituloTrato" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="fechaUltimoAcceso" Type="DateTime" Precision="3" />
+    <Property Name="correoElectronico" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="bReinicioContrasena" Type="Boolean" />
+  </EntityType>
+  <Association Name="fk_escuela_alumno">
+    <End Role="escuela" Type="SaaSModel.escuela" Multiplicity="0..1" />
+    <End Role="alumno" Type="SaaSModel.alumno" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="escuela">
+        <PropertyRef Name="idEscuela" />
+      </Principal>
+      <Dependent Role="alumno">
+        <PropertyRef Name="idEscuela" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_inscripcion_idAlumno">
+    <End Role="alumno" Type="SaaSModel.alumno" Multiplicity="1" />
+    <End Role="inscripcion" Type="SaaSModel.inscripcion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="alumno">
+        <PropertyRef Name="idAlumno" />
+      </Principal>
+      <Dependent Role="inscripcion">
+        <PropertyRef Name="idAlumno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_relAlumnoMedicamento_idAlumno">
+    <End Role="alumno" Type="SaaSModel.alumno" Multiplicity="1" />
+    <End Role="relAlumnoMedicamento" Type="SaaSModel.relAlumnoMedicamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="alumno">
+        <PropertyRef Name="idAlumno" />
+      </Principal>
+      <Dependent Role="relAlumnoMedicamento">
+        <PropertyRef Name="idAlumno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_inscripcion_idPeriodo">
+    <End Role="cicloAcademico" Type="SaaSModel.cicloAcademico" Multiplicity="1" />
+    <End Role="inscripcion" Type="SaaSModel.inscripcion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cicloAcademico">
+        <PropertyRef Name="idCicloAcademico" />
+      </Principal>
+      <Dependent Role="inscripcion">
+        <PropertyRef Name="idPeriodo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_idEscuela">
+    <End Role="escuela" Type="SaaSModel.escuela" Multiplicity="1" />
+    <End Role="relEscuelaServicio" Type="SaaSModel.relEscuelaServicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="escuela">
+        <PropertyRef Name="idEscuela" />
+      </Principal>
+      <Dependent Role="relEscuelaServicio">
+        <PropertyRef Name="idEscuela" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_idEscuela_publicacion">
+    <End Role="escuela" Type="SaaSModel.escuela" Multiplicity="1" />
+    <End Role="publicacion" Type="SaaSModel.publicacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="escuela">
+        <PropertyRef Name="idEscuela" />
+      </Principal>
+      <Dependent Role="publicacion">
+        <PropertyRef Name="idEscuela" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_idEstatus_Publicacion">
+    <End Role="estatusPublicacion" Type="SaaSModel.estatusPublicacion" Multiplicity="1" />
+    <End Role="publicacion" Type="SaaSModel.publicacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estatusPublicacion">
+        <PropertyRef Name="idEstatus" />
+      </Principal>
+      <Dependent Role="publicacion">
+        <PropertyRef Name="idEstatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_inscripcionEtapa_idEtapa">
+    <End Role="etapaInscripcion" Type="SaaSModel.etapaInscripcion" Multiplicity="1" />
+    <End Role="relInscripcionEtapa" Type="SaaSModel.relInscripcionEtapa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="etapaInscripcion">
+        <PropertyRef Name="idEtapaInscripcion" />
+      </Principal>
+      <Dependent Role="relInscripcionEtapa">
+        <PropertyRef Name="idEtapaInscripcion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_relInscripcionEtapa_idInscripcion">
+    <End Role="inscripcion" Type="SaaSModel.inscripcion" Multiplicity="1" />
+    <End Role="relInscripcionEtapa" Type="SaaSModel.relInscripcionEtapa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="inscripcion">
+        <PropertyRef Name="idInscripcion" />
+      </Principal>
+      <Dependent Role="relInscripcionEtapa">
+        <PropertyRef Name="idInscripcion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_relAlumnoMedicamento_idMedicamento">
+    <End Role="medicamento" Type="SaaSModel.medicamento" Multiplicity="1" />
+    <End Role="relAlumnoMedicamento" Type="SaaSModel.relAlumnoMedicamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="medicamento">
+        <PropertyRef Name="idMedicamento" />
+      </Principal>
+      <Dependent Role="relAlumnoMedicamento">
+        <PropertyRef Name="idMedicamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_idServicio">
+    <End Role="servicio" Type="SaaSModel.servicio" Multiplicity="1" />
+    <End Role="relEscuelaServicio" Type="SaaSModel.relEscuelaServicio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="servicio">
+        <PropertyRef Name="idServicio" />
+      </Principal>
+      <Dependent Role="relEscuelaServicio">
+        <PropertyRef Name="idServicio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

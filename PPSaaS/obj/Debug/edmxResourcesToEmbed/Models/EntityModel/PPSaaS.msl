@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SaaSModelStoreContainer" CdmEntityContainer="SaaSEntities">
+    <EntitySetMapping Name="alumno">
+      <EntityTypeMapping TypeName="SaaSModel.alumno">
+        <MappingFragment StoreEntitySet="alumno">
+          <ScalarProperty Name="idAlumno" ColumnName="idAlumno" />
+          <ScalarProperty Name="idEscuela" ColumnName="idEscuela" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidoPaterno" ColumnName="apellidoPaterno" />
+          <ScalarProperty Name="apellidoMaterno" ColumnName="apellidoMaterno" />
+          <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+          <ScalarProperty Name="nacionalidad" ColumnName="nacionalidad" />
+          <ScalarProperty Name="tipoSangre" ColumnName="tipoSangre" />
+          <ScalarProperty Name="bAutorizacionMedicamento" ColumnName="bAutorizacionMedicamento" />
+          <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cicloAcademico">
+      <EntityTypeMapping TypeName="SaaSModel.cicloAcademico">
+        <MappingFragment StoreEntitySet="cicloAcademico">
+          <ScalarProperty Name="idCicloAcademico" ColumnName="idCicloAcademico" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
+          <ScalarProperty Name="fechaFin" ColumnName="fechaFin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="escuela">
+      <EntityTypeMapping TypeName="SaaSModel.escuela">
+        <MappingFragment StoreEntitySet="escuela">
+          <ScalarProperty Name="idEscuela" ColumnName="idEscuela" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="RFC" ColumnName="RFC" />
+          <ScalarProperty Name="claveSEP" ColumnName="claveSEP" />
+          <ScalarProperty Name="direccion_calle" ColumnName="direccion_calle" />
+          <ScalarProperty Name="direccion_numero" ColumnName="direccion_numero" />
+          <ScalarProperty Name="direccion_estado" ColumnName="direccion_estado" />
+          <ScalarProperty Name="direccion_pais" ColumnName="direccion_pais" />
+          <ScalarProperty Name="direccion_cp" ColumnName="direccion_cp" />
+          <ScalarProperty Name="contacto_responsable" ColumnName="contacto_responsable" />
+          <ScalarProperty Name="contacto_telefono" ColumnName="contacto_telefono" />
+          <ScalarProperty Name="contacto_extension" ColumnName="contacto_extension" />
+          <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estatusPublicacion">
+      <EntityTypeMapping TypeName="SaaSModel.estatusPublicacion">
+        <MappingFragment StoreEntitySet="estatusPublicacion">
+          <ScalarProperty Name="idEstatus" ColumnName="idEstatus" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="etapaInscripcion">
+      <EntityTypeMapping TypeName="SaaSModel.etapaInscripcion">
+        <MappingFragment StoreEntitySet="etapaInscripcion">
+          <ScalarProperty Name="idEtapaInscripcion" ColumnName="idEtapaInscripcion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="secuencia" ColumnName="secuencia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="evento">
+      <EntityTypeMapping TypeName="SaaSModel.evento">
+        <MappingFragment StoreEntitySet="evento">
+          <ScalarProperty Name="idEvento" ColumnName="idEvento" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="accion" ColumnName="accion" />
+          <ScalarProperty Name="vista" ColumnName="vista" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="inscripcion">
+      <EntityTypeMapping TypeName="SaaSModel.inscripcion">
+        <MappingFragment StoreEntitySet="inscripcion">
+          <ScalarProperty Name="idInscripcion" ColumnName="idInscripcion" />
+          <ScalarProperty Name="idAlumno" ColumnName="idAlumno" />
+          <ScalarProperty Name="idPeriodo" ColumnName="idPeriodo" />
+          <ScalarProperty Name="bInscrito" ColumnName="bInscrito" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="medicamento">
+      <EntityTypeMapping TypeName="SaaSModel.medicamento">
+        <MappingFragment StoreEntitySet="medicamento">
+          <ScalarProperty Name="idMedicamento" ColumnName="idMedicamento" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fechaAlta" ColumnName="fechaAlta" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mensaje">
+      <EntityTypeMapping TypeName="SaaSModel.mensaje">
+        <MappingFragment StoreEntitySet="mensaje">
+          <ScalarProperty Name="idMensaje" ColumnName="idMensaje" />
+          <ScalarProperty Name="idEmite" ColumnName="idEmite" />
+          <ScalarProperty Name="idRecibe" ColumnName="idRecibe" />
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="fechaEmision" ColumnName="fechaEmision" />
+          <ScalarProperty Name="fechaLectura" ColumnName="fechaLectura" />
+          <ScalarProperty Name="bLeido" ColumnName="bLeido" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="notificacion">
+      <EntityTypeMapping TypeName="SaaSModel.notificacion">
+        <MappingFragment StoreEntitySet="notificacion">
+          <ScalarProperty Name="idNotificacion" ColumnName="idNotificacion" />
+          <ScalarProperty Name="idEvento" ColumnName="idEvento" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+          <ScalarProperty Name="fechaEvento" ColumnName="fechaEvento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="publicacion">
+      <EntityTypeMapping TypeName="SaaSModel.publicacion">
+        <MappingFragment StoreEntitySet="publicacion">
+          <ScalarProperty Name="idPublicacion" ColumnName="idPublicacion" />
+          <ScalarProperty Name="idEscuela" ColumnName="idEscuela" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="contenido" ColumnName="contenido" />
+          <ScalarProperty Name="publico" ColumnName="publico" />
+          <ScalarProperty Name="idEstatus" ColumnName="idEstatus" />
+          <ScalarProperty Name="fechaPublicacion" ColumnName="fechaPublicacion" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+          <ScalarProperty Name="fechaBaja" ColumnName="fechaBaja" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+          <ScalarProperty Name="bFecha" ColumnName="bFecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="relAlumnoMedicamento">
+      <EntityTypeMapping TypeName="SaaSModel.relAlumnoMedicamento">
+        <MappingFragment StoreEntitySet="relAlumnoMedicamento">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idAlumno" ColumnName="idAlumno" />
+          <ScalarProperty Name="idMedicamento" ColumnName="idMedicamento" />
+          <ScalarProperty Name="bAutorizado" ColumnName="bAutorizado" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="relEscuelaServicio">
+      <EntityTypeMapping TypeName="SaaSModel.relEscuelaServicio">
+        <MappingFragment StoreEntitySet="relEscuelaServicio">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idEscuela" ColumnName="idEscuela" />
+          <ScalarProperty Name="idServicio" ColumnName="idServicio" />
+          <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="relEscuelaTema">
+      <EntityTypeMapping TypeName="SaaSModel.relEscuelaTema">
+        <MappingFragment StoreEntitySet="relEscuelaTema">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idEscuela" ColumnName="idEscuela" />
+          <ScalarProperty Name="idTema" ColumnName="idTema" />
+          <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+          <ScalarProperty Name="fechaActualizacion" ColumnName="fechaActualizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="relInscripcionEtapa">
+      <EntityTypeMapping TypeName="SaaSModel.relInscripcionEtapa">
+        <MappingFragment StoreEntitySet="relInscripcionEtapa">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idInscripcion" ColumnName="idInscripcion" />
+          <ScalarProperty Name="idEtapaInscripcion" ColumnName="idEtapaInscripcion" />
+          <ScalarProperty Name="bCompleto" ColumnName="bCompleto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="relUsuarioRol">
+      <EntityTypeMapping TypeName="SaaSModel.relUsuarioRol">
+        <MappingFragment StoreEntitySet="relUsuarioRol">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="idEscuela" ColumnName="idEscuela" />
+          <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rol">
+      <EntityTypeMapping TypeName="SaaSModel.rol">
+        <MappingFragment StoreEntitySet="rol">
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="fechaActualizacion" ColumnName="fechaActualizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="servicio">
+      <EntityTypeMapping TypeName="SaaSModel.servicio">
+        <MappingFragment StoreEntitySet="servicio">
+          <ScalarProperty Name="idServicio" ColumnName="idServicio" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="controlador" ColumnName="controlador" />
+          <ScalarProperty Name="vista" ColumnName="vista" />
+          <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tema">
+      <EntityTypeMapping TypeName="SaaSModel.tema">
+        <MappingFragment StoreEntitySet="tema">
+          <ScalarProperty Name="idTema" ColumnName="idTema" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tutoria">
+      <EntityTypeMapping TypeName="SaaSModel.tutoria">
+        <MappingFragment StoreEntitySet="tutoria">
+          <ScalarProperty Name="idTutoria" ColumnName="idTutoria" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idAlumno" ColumnName="idAlumno" />
+          <ScalarProperty Name="bAutorizado" ColumnName="bAutorizado" />
+          <ScalarProperty Name="fechaAlta" ColumnName="fechaAlta" />
+          <ScalarProperty Name="fechaModificacion" ColumnName="fechaModificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="SaaSModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idEscuela" ColumnName="idEscuela" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidoPaterno" ColumnName="apellidoPaterno" />
+          <ScalarProperty Name="apellidoMaterno" ColumnName="apellidoMaterno" />
+          <ScalarProperty Name="cuenta" ColumnName="cuenta" />
+          <ScalarProperty Name="nomina" ColumnName="nomina" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+          <ScalarProperty Name="sal" ColumnName="sal" />
+          <ScalarProperty Name="bActivo" ColumnName="bActivo" />
+          <ScalarProperty Name="direccion_calle" ColumnName="direccion_calle" />
+          <ScalarProperty Name="direccion_numero" ColumnName="direccion_numero" />
+          <ScalarProperty Name="direccion_ciudad" ColumnName="direccion_ciudad" />
+          <ScalarProperty Name="direccion_estado" ColumnName="direccion_estado" />
+          <ScalarProperty Name="direccion_pais" ColumnName="direccion_pais" />
+          <ScalarProperty Name="direccion_cp" ColumnName="direccion_cp" />
+          <ScalarProperty Name="contacto_telefono" ColumnName="contacto_telefono" />
+          <ScalarProperty Name="contacto_extension" ColumnName="contacto_extension" />
+          <ScalarProperty Name="contacto_movil" ColumnName="contacto_movil" />
+          <ScalarProperty Name="tituloTrato" ColumnName="tituloTrato" />
+          <ScalarProperty Name="fechaUltimoAcceso" ColumnName="fechaUltimoAcceso" />
+          <ScalarProperty Name="correoElectronico" ColumnName="correoElectronico" />
+          <ScalarProperty Name="bReinicioContrasena" ColumnName="bReinicioContrasena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

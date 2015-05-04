@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Editar publicación";
+    Layout = "~/Views/Shared/_General.cshtml";
+}
+
+
+ <link href="~/Content/redactor/redactor.css" rel="stylesheet" />
+<script src="~/Content/redactor/redactor.min.js"></script>
+
+
+
+<script type="text/javascript">
+    $(document).ready(
+         function () {
+             $('#redactor').redactor();
+         }
+     );
+
+</script>
+
+
+<style type="text/css">
+    #panel-accion {
+    
+    margin-top:25px;
+    }
+
+
+</style>
+
+
+<div class="container">
+<div class="col-md-9">
+
+    <div class="container-info">@*panel panel*@                    
+    
+       <!-- Sección mensajes-->
+    <div class="alert alert-success alert-dismissable fade in">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <span>Tu publicación se ha guardado como borrador
+          </span>
+    </div>
+ 
+       
+       
+    <div class="page-header">
+        <h3 id="timeline">Editar publicación</h3>@ViewBag.nombreCompleto
+    </div>
+    
+<div class="row">
+    <div class="form-group">
+                         <input type="text" class="form-control" id="txt_TituloPost" name="txt_TituloPost" placeholder="Titulo de la publicación" value="">
+                         <input type="hidden" id="cve-pub" name="cve-pub" value="24">
+    </div>
+        <textarea  id="redactor" name="content">
+			<h2>Hola mundo!</h2>
+			<p>Lorem ipsum <a href="http://test.com" title="dolor">dolor</a> sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing <b>elit, sed do eiusmod tempor incididunt</b> ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</textarea>
+
+</div>
+
+             <div class="row" id="panel-accion">
+                        <div class="btn-group pull-right">   
+                            <a href="#" onclick="$(this).closest('form').submit()" class="btn btn-success">Publicar</a>
+                            <a href="javascript:borrador();" class="btn btn-success">Guardar borrador</a>
+                            <a href="javascript:previa();" class="btn btn-success">Vista previa</a>
+                            <a href="/Publicacion" class="btn btn-success">Cerrar</a>
+                        </div>
+                    </div> 
+
+</div>
+    
+
+
+
+
+</div>
+
+
+    <div class="col-md-3">
+      <div class="container-info-gray" style="position:fixed; padding:25px;">
+            <h4 > <span class="glyphicon glyphicon-cog"></span>Configuración de la publicación</h4>
+      
+</div>
+        </div>
+
+    
+</div>

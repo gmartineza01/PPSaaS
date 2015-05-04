@@ -1,0 +1,176 @@
+﻿@{
+    ViewBag.Title = "Registro de escuela";
+    Layout = "~/Views/Shared/_General.cshtml";
+}
+
+
+
+<style type="text/css">
+
+</style>
+
+
+<div class="container">
+<div class="col-md-9">
+
+   <div class="container-info">@*panel panel*@                    
+    
+       <!-- Sección notas importantes o de ultima hora-->
+
+       @if (TempData["ErrorRegistroEscuela"] != null)
+       {
+             <div class="alert alert-danger alert-dismissable fade in">
+                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                 @TempData["ErrorRegistroEscuela"]
+             </div>
+             <hr />   
+       }
+       
+    <div class="page-header">
+        <h3 id="timeline">Registro de escuela</h3>
+        <p><b>Instrucciones:</b> Complete el siguiente formulario con la información de la escuela que desea registrar.</p>
+    </div>
+
+
+    <form id="datos-escuela" class="panel panel-success" role="form" method="post" action="@Url.Action("GuardarEscuela", "Administrador")">
+     <input type="hidden" value="0" name="cve-es" id="cve-es" />
+
+
+              <div class="panel-heading">
+                   Información general
+              </div>
+
+                    <div class="panel-body">
+                    <p class="help-block">Nota: Todos los campos marcados con asterisco* son obligatorios</p>
+
+                                <div class="col-lg-6">
+                                    <div class="form-group">
+                                        <label>Nombre escuela*</label>
+                                        <input class="form-control" type="text" placeholder="Ejemplo: Colegio de niños A.C." name="txt_nombreEscuela" id="txt_nombreEscuela">
+                                     </div>
+                                </div>
+
+                                  <div class="col-lg-6">
+                                       <div class="form-group">
+                                            <label>Registro Federal de Contribuyentes (RFC)</label>
+                                            <input class="form-control" type="text" name="txt_RFC" id="txt_RFC">
+                                        </div>
+                                  </div>
+
+
+                                 <div class="col-lg-6">
+                                      <div class="form-group">
+                                            <label>Clave Secretaria de Educación Pública</label>
+                                            <input class="form-control" type="text" name="txt_claveSEP" id="txt_claveSEP">
+                                        </div>
+                                  </div>
+
+                          
+                        </div>  <!-- /.panel-body -->
+                      
+
+
+           <div class="panel-heading">
+               Información de ubicación
+           </div>
+            <div class="panel-body">
+                       
+                                <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Calle</label>
+                                            <input class="form-control" type="text" name="txt_calle" id="txt_calle">
+                                        </div>
+                                    </div>
+
+                                   <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <label>Numero</label>
+                                            <input class="form-control" type="text" name="txt_numero" id="txt_numero">
+                                        </div>
+                                   </div>
+
+
+                                 <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <label>Codigo postal</label>
+                                            <input class="form-control" type="text" name="txt_cp" id="txt_cp">
+                                        </div>
+                                   </div>
+
+
+                                   <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Estado</label>
+                                            <input class="form-control" type="text" name="txt_estado" id="txt_estado">
+                                        </div>
+                                    </div>
+
+                                       <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Pais</label>
+                                            <input class="form-control" type="text" name="txt_pais" id="txt_pais">
+                                        </div>
+                             
+                          </div>
+                    </div><!-- Fin del panel body -->
+
+
+           <div class="panel-heading">
+               Información de contacto
+           </div>
+            <div class="panel-body">
+                 
+                                  <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Responsable</label>
+                                            <input class="form-control" type="text" name="txt_responsable" id="txt_responsable">
+                                        </div>
+                                    </div>
+
+                                <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Telefono</label>
+                                            <input class="form-control" type="text" name="txt_telefono" id="txt_telefono">
+                                        </div>
+                                    </div>
+
+                                   <div class="col-lg-3">
+                                        <div class="form-group">
+                                            <label>Extensión</label>
+                                            <input class="form-control" type="text" name="txt_extension" id="txt_extension">
+                                        </div>
+                                    </div>
+
+
+                            <div class="col-lg-12">
+                                        <div class="form-group">
+                                           <button type="submit" class="btn btn-success pull-right">Guardar</button> 
+                                        </div>
+                              </div>
+                </div>
+          
+                 
+           
+
+      </form>
+       </div>
+
+   
+
+  
+
+</div>
+
+<div class="col-md-3">
+      <div class="container-info-gray" style="position:fixed; padding:25px;">
+        
+           <h4 > <span class="glyphicon glyphicon-arrow-left"></span> Regresar al menu anterior</h4>
+          </div>
+</div>
+
+
+
+
+
+</div>
+               
